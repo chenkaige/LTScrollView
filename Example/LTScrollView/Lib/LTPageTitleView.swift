@@ -69,9 +69,22 @@ public typealias LTDidSelectTitleViewHandle = (Int) -> Void
         return pageBottomLineView
     }()
     
+    /*
     private lazy var sliderLineView: UIView = {
         let sliderLineView = UIView(frame: CGRect(x: layout.lrMargin, y: bounds.height - layout.bottomLineHeight - layout.pageBottomLineHeight, width: 0, height: layout.bottomLineHeight))
         sliderLineView.backgroundColor = layout.bottomLineColor
+        return sliderLineView
+    }()
+ */
+    
+    private lazy var sliderLineView: UIImageView = {
+        let sliderLineView = UIImageView(frame: CGRect(x: layout.lrMargin, y: bounds.height - layout.bottomLineHeight - layout.pageBottomLineHeight, width: 0, height: layout.bottomLineHeight))
+        sliderLineView.backgroundColor = layout.bottomLineColor
+        if let bottomPic = layout.bottomLineImage {
+            sliderLineView.backgroundColor = UIColor.clear
+            sliderLineView.image = bottomPic
+            sliderLineView.contentMode = .scaleAspectFit
+        }
         return sliderLineView
     }()
     

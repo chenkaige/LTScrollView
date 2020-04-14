@@ -91,6 +91,8 @@
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.clear
+        tableView.backgroundView?.backgroundColor = UIColor.clear
         registerCell(tableView, UITableViewCell.self)
         return tableView
     }()
@@ -127,6 +129,7 @@
  extension LTSimpleManager {
     private func setupTitleView() -> LTPageTitleView {
         let titleView = LTPageTitleView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: layout.sliderHeight), titles: titles, layout: layout)
+        titleView.backgroundColor = UIColor.clear
         return titleView
     }
  }
@@ -135,6 +138,7 @@
     
     private func createPageViewConfig(currentViewController:UIViewController, layout: LTLayout, titleView: LTPageTitleView?) -> LTPageView {
         let pageView = LTPageView(frame: self.bounds, currentViewController: currentViewController, viewControllers: viewControllers, titles: titles, layout:layout, titleView: titleView)
+        pageView.backgroundColor = UIColor.clear
         if titles.count != 0 {
             pageView.glt_createViewController(0)
         }
@@ -157,7 +161,7 @@
  extension LTSimpleManager {
     
     private func createSubViews() {
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.clear
         addSubview(tableView)
         if #available(iOS 11.0, *) {
             tableView.contentInsetAdjustmentBehavior = .never
@@ -264,6 +268,8 @@
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = cellWithTableView(tableView)
         cell.selectionStyle = .none
+        cell.backgroundColor = UIColor.clear
+        cell.contentView.backgroundColor = UIColor.clear
         if layout.isHovered {
             pageView.addSubview(titleView)
         }

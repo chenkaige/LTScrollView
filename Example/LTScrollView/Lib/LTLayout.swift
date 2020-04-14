@@ -29,6 +29,9 @@ public class LTLayout: NSObject {
     /* 滑块底部线的颜色 - UIColor.blue */
     @objc public var bottomLineColor: UIColor? = UIColor.red
     
+    /* 滑块底部线可以传图片 */
+    @objc public var bottomLineImage: UIImage?
+    
     /* 整个滑块的高，pageTitleView的高 */
     @objc public var sliderHeight: CGFloat = 44.0
     
