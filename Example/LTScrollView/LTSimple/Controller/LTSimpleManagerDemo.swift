@@ -37,6 +37,14 @@ class LTSimpleManagerDemo: UIViewController {
         layout.bottomLineHeight = 4.0
         layout.bottomLineCornerRadius = 2.0
         /* 更多属性设置请参考 LTLayout 中 public 属性说明 */
+        layout.sliderHeight = 56
+        layout.sliderWidth = 18
+        layout.lrMargin = 16 //左右距离
+        layout.isHiddenPageBottomLine = true
+        layout.isHiddenSlider = true
+        layout.bottomLineHeight = 7
+        layout.titleFont = UIFont.systemFont(ofSize: 16, weight: .medium)
+        layout.bottomLineImage = UIImage(named: "slider_bottom_line")!
         return layout
     }()
     

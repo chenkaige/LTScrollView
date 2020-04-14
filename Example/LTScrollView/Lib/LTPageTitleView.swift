@@ -81,9 +81,12 @@ public typealias LTDidSelectTitleViewHandle = (Int) -> Void
         let sliderLineView = UIImageView(frame: CGRect(x: layout.lrMargin, y: bounds.height - layout.bottomLineHeight - layout.pageBottomLineHeight, width: 0, height: layout.bottomLineHeight))
         sliderLineView.backgroundColor = layout.bottomLineColor
         if let bottomPic = layout.bottomLineImage {
+            let blankSize = layout.sliderHeight - layout.titleFont!.pointSize
+            
+            sliderLineView.frame = CGRect(x: layout.lrMargin, y: bounds.height - layout.bottomLineHeight - layout.pageBottomLineHeight-blankSize/4, width: 0, height: layout.bottomLineHeight)
             sliderLineView.backgroundColor = UIColor.clear
             sliderLineView.image = bottomPic
-            sliderLineView.contentMode = .scaleAspectFit
+            sliderLineView.contentMode = .scaleToFill
         }
         return sliderLineView
     }()
