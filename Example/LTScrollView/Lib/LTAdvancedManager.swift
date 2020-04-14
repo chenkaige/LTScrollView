@@ -113,7 +113,7 @@ extension LTAdvancedManager {
     
     private func setupSubViews() {
         titleView.frame.origin.y = kHeaderHeight
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.clear
         addSubview(pageView)
         setupPageViewDidSelectItem()
         setupFirstAddChildViewController()

@@ -35,7 +35,7 @@ class LTSimpleTestOneVC: UIViewController, LTTableViewProtocal {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.clear
         view.addSubview(tableView)
         glt_scrollView = tableView
         reftreshData()

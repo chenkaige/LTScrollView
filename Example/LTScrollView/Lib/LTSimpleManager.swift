@@ -90,6 +90,7 @@
         tableView.delegate = self
         tableView.dataSource = self
         tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
         tableView.separatorStyle = .none
         tableView.backgroundColor = UIColor.clear
         tableView.backgroundView?.backgroundColor = UIColor.clear
